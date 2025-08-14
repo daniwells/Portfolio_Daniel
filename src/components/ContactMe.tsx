@@ -6,11 +6,11 @@ import axios from "axios";
 const ContactMe: React.FC = () => {
 
     const sendEmailRequest = async (name: string, message: string, email: string) => {
-        const response = await axios.post(`/api/email`, JSON.stringify({ 
+        const response = await axios.post(`/api/email`, { 
             name: name,
             message: message,
             email: email
-        }), {
+        }, {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -28,7 +28,10 @@ const ContactMe: React.FC = () => {
         const message: string = data.get("message")?.toString() || "";
         
         try{
-            await sendEmailRequest(name, message, email);
+            const response = await sendEmailRequest(name, message, email);
+            console.log("AAAAAAAAAAAAAAAAAAAAA")
+            console.log(response)
+
         }catch(error: any){
             console.log(error);
         }
