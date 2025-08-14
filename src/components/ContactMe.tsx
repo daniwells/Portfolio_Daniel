@@ -28,12 +28,9 @@ const ContactMe: React.FC = () => {
         const message: string = data.get("message")?.toString() || "";
         
         try{
-            const response = await sendEmailRequest(name, message, email);
-            console.log("AAAAAAAAAAAAAAAAAAAAA")
-            console.log(response)
-
-        }catch(error: any){
-            console.log(error);
+            await sendEmailRequest(name, message, email);
+        }catch{
+            return
         }
     }
 
