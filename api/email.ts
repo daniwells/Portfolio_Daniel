@@ -64,7 +64,7 @@ export async function POST(request: Request) {
 
   try {
     const data = await resend.emails.send({
-      from,
+      from: process.env.VITE_SENDER_EMAIL!,
       to: process.env.VITE_RECIPIENT_EMAIL!,
       subject: `New Contact ${name}`,
       react: "test",
