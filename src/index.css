@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --color-background: #0B0511;
+    --color-pink-custom: #E04F60;
+    --color-pink-custom-opacity: rgba(224, 79, 96, .15);
+    --color-blue-custom: #7163F3;
+    --color-blue-custom-opacity: rgba(113, 99, 243, 0.15);
+    --color-purple-custom: #130518;
+    --font-itim: "Itim", cursive;
+    --color-ritmo-forma: #403E3B;
+    --color-prostore: #FFC929;
+    --color-arquiteto-brownie: #F2F2F2;
+}
+
+@layer utilities {
+
+    @keyframes meshGradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .mesh-gradient {
+        background-color: black; 
+        background: radial-gradient(at 20% 70%, var(--color-pink-custom-opacity), transparent 40%),
+                    radial-gradient(at 80% 30%, var(--color-blue-custom-opacity), transparent 40%);
+        background-size: 200% 200%;
+        background-attachment: fixed;
+        animation: meshGradient 15s ease infinite;
+    }
+}      
