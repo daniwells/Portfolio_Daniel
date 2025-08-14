@@ -42,7 +42,8 @@ module.exports = async function handler(req, res) {
       from,
       to: process.env.RECIPIENT_EMAIL,
       subject: `New Contact ${name}`,
-      react: PurchaseReceiptEmail({ message }),
+      // react: PurchaseReceiptEmail({ message }),
+      react: "test",
     });
     res.status(200).json({ success: true, data });
   } catch (error) {
