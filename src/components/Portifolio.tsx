@@ -9,7 +9,8 @@ import {
     SiDocker,
     SiJsonwebtokens,
     SiCloudinary,
-    SiPaypal
+    SiPaypal,
+    SiStripe
 } from 'react-icons/si';
 import { BsBoxArrowUpRight, BsGithub } from "react-icons/bs";
 
@@ -35,7 +36,7 @@ const projects = [
   {
     title: "Prostore",
     description: "Modern personal portfolio with animations",
-    builtWith: [<SiNextdotjs size={20} />, <SiJsonwebtokens size={20} />, <SiPaypal size={20}/>],
+    builtWith: [<SiNextdotjs size={20} />, <SiPostgresql size={20} />, <SiJsonwebtokens size={20} />, <SiPaypal size={20}/>, <SiStripe size={20}/>],
     img: prostoreImage,
     liveLink: "https://prostore-course-three.vercel.app/",
     githubLink: "https://github.com/daniwells/Prostore_Course.git",
