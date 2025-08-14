@@ -29,7 +29,7 @@
 // }
 
 const { Resend } = require("resend");
-const PurchaseReceiptEmail = require("../src/email/PurchaseReceiptEmail");
+// const PurchaseReceiptEmail = require("../src/email/PurchaseReceiptEmail");
 
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).end();
