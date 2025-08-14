@@ -8,7 +8,7 @@ import {
     Text,
 } from "@react-email/components"
 
-function PurchaseReceiptEmail({ message }: { message: string }) {
+export default function PurchaseReceiptEmail({ message }: { message: string }) {
     return <Html>
         <Preview>New Contact Message</Preview>
         <Tailwind>
@@ -21,5 +21,3 @@ function PurchaseReceiptEmail({ message }: { message: string }) {
         </Tailwind>
     </Html>;
 }
-
-export default PurchaseReceiptEmail;
