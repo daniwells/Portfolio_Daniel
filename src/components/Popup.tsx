@@ -15,9 +15,7 @@ const Popup: React.FC<{
     
     if(!isOpen) return
 
-    return <div 
-            className="fixed z-50 flex justify-center items-center w-full inset-0 max-h-full bg-[rgba(0,0,0,0.4)] "
-        >
+    return <div className="fixed z-50 flex justify-center items-center w-full inset-0 max-h-full bg-[rgba(0,0,0,0.4)] ">
         <div className="relative p-4 w-full sm:w-[30rem] max-w-2xl max-h-full">
             <div className="relative bg-white rounded-lg shadow-sm">
                 <div className="flex items-center justify-between p-4 mb-4 border-b border-gray-300">
@@ -43,7 +41,7 @@ const Popup: React.FC<{
                                 <p>
                                     Email was sent successfully!
                                 </p>
-                                <p><strong>{username}</strong>, Thanks for your contact.</p>
+                                <p><strong>{username}</strong>, thanks for your contact.</p>
                             </>
                         :
                             <>

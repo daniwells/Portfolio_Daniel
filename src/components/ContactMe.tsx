@@ -3,9 +3,11 @@ import { Mail, Send } from "lucide-react";
 import { BsLinkedin } from "react-icons/bs";
 import axios from "axios";
 import Popup from "./Popup";
+import Loading from "./Loading";
 
 const ContactMe: React.FC = () => {
-    const [ isOpen, setIsOpen ] = useState(false);
+    const [ isOpenLoading, setIsOpenLoading ] = useState(false);
+    const [ isOpenPopup, setIsOpenPopup ] = useState(false);
     const [ username, setUsername ] = useState("");
     const [ statusPopup, setStatusPopup ] = useState<"success" | "error">("success");
 
@@ -25,6 +27,8 @@ const ContactMe: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setIsOpenLoading(true);
+
         const data = new FormData(e.currentTarget as HTMLFormElement);
 
         const name: string = data.get("name")?.toString() || "";
@@ -35,16 +39,19 @@ const ContactMe: React.FC = () => {
 
         try{
             await sendEmailRequest(name, message, email);
-            setIsOpen(true);
+            setIsOpenLoading(false);
+            setIsOpenPopup(true);
             setStatusPopup("success");
         }catch{
-            setIsOpen(true);
+            setIsOpenLoading(false);
+            setIsOpenPopup(true);
             setStatusPopup("error");
         }
     }
 
     return  <>
-        <Popup isOpen={isOpen} setIsOpen={setIsOpen} username={username} status={statusPopup}/>
+        <Loading isOpen={isOpenLoading}/>
+        <Popup isOpen={isOpenPopup} setIsOpen={setIsOpenPopup} username={username} status={statusPopup}/>
         <section id="contact" className="mx-auto max-w-6xl px-4 py-24 md:py-32">    
             <h2 className="text-5xl font-extrabold text-pink-custom font-itim">Contact Me</h2>
             <form
