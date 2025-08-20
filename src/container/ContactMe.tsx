@@ -1,7 +1,12 @@
+// Libs
 import React, { useState } from "react";
 import { Mail, Send } from "lucide-react";
-import { BsLinkedin } from "react-icons/bs";
 import axios from "axios";
+
+// Icons
+import { BsLinkedin } from "react-icons/bs";
+
+// Components
 import Popup from "../components/Popup";
 import Loading from "../components/Loading";
 import Button from "../components/Button";

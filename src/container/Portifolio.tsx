@@ -1,18 +1,23 @@
+// Libs
 import { FolderGit2 } from "lucide-react";
-import ritmoDaFormaImage from "../../public/assets/images/ritmo-da-forma.png";
 import prostoreImage from "../../public/assets/images/prostore.png";
-import arquitetoBrownieImage from "../../public/assets/images/arquiteto-brownie.png";
+
+// Icons
 import { 
-    SiReact,
-    SiNextdotjs,
-    SiPostgresql,
-    SiDocker,
-    SiJsonwebtokens,
-    SiCloudinary,
-    SiPaypal,
-    SiStripe
+  SiReact,
+  SiNextdotjs,
+  SiPostgresql,
+  SiDocker,
+  SiJsonwebtokens,
+  SiCloudinary,
+  SiPaypal,
+  SiStripe
 } from 'react-icons/si';
 import { BsBoxArrowUpRight, BsGithub } from "react-icons/bs";
+
+// Images
+import ritmoDaFormaImage from "../../public/assets/images/ritmo-da-forma.png";
+import arquitetoBrownieImage from "../../public/assets/images/arquiteto-brownie.png";
 
 const projects = [
   {
