@@ -4,19 +4,20 @@ import curriculumPdf from "../../public/assets/pdf/Curriculo_Daniel.pdf"
 import Button from "../components/Button";
 
 const Hero = () => {
-
     return (
-        <section id="home" className="relative mx-auto flex min-h-[90vh] max-w-6xl flex-col items-center justify-center gap-8 px-4 pt-24 md:flex-row md:gap-12">
+        <section id="home" className="relative mx-auto flex min-h-[90vh] max-w-6xl flex-col-reverse items-center justify-center gap-8 px-4 pt-24 md:flex-row md:gap-12">
             <div className="flex-1">
-                <h1 className="text-7xl font-extrabold text-pink-custom font-itim">
+                <h1 className="text-6xl sm:text-7xl font-extrabold text-pink-custom font-itim">
                     Daniel Lima
                 </h1>
                 <h2 className="mt-3 text-2xl font-medium">
                     Fullstack Developer
                 </h2>
+                
                 <p className="mt-6 mb-6 max-w-xl leading-relaxed text-white/70">
                     I love learning new technologies and building solutions that make a difference. Thanks for visiting my portfolio! Happy coding..!
                 </p>
+                 
                 <Button>
                     <a
                         type="application/pdf"
@@ -29,8 +30,8 @@ const Hero = () => {
                 </Button>
             </div>
 
-            <div className="relative flex-1">
-                <div className="relative mx-auto h-80 w-72 rounded-3xl group">
+            <div className="relative flex-1 mb-5 md:mb-0">
+                <div className="relative mx-auto h-64 w-56 sm:h-80 sm:w-72 rounded-3xl group">
                     <img 
                         src={photoImage} 
                         alt="Profile" 

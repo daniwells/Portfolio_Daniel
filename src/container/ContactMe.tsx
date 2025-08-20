@@ -57,7 +57,7 @@ const ContactMe: React.FC = () => {
             <h2 className="text-5xl font-extrabold text-pink-custom font-itim">Contact Me</h2>
             <form
                 onSubmit={handleSubmit}
-                className="mt-6 grid gap-3 rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_0_25px_rgba(255,255,255,0.05)] md:grid-cols-2"
+                className="mt-6 grid gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-6 shadow-[0_0_25px_rgba(255,255,255,0.05)] md:grid-cols-2"
             >
                 <div className="mt-3  md:col-span-1">
                     <label className="block text-xs uppercase tracking-wide text-white/60">Name</label>
@@ -88,8 +88,8 @@ const ContactMe: React.FC = () => {
                         style={{resize: "none",}}
                     />
                 </div>
-                <div className="mt-6 md:col-span-2 flex items-center justify-between">
-                    <div className=" flex gap-3 text-white/70">
+                <div className="mt-6 flex flex-col gap-6 items-center justify-between sm:flex-row md:col-span-2">
+                    <div className="flex flex-wrap justify-center items-center gap-3 text-white/70">
                         <a 
                             href="mailto:dalinellimafreita@gmail.com"
                             className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-sm hover:bg-white/10"
