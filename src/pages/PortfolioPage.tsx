@@ -2,11 +2,11 @@
 import React, { useEffect, useMemo } from "react";
 
 // Components
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import AboutMe from "../components/AboutMe";
-import Portifolio from "../components/Portifolio";
-import ContactMe from "../components/ContactMe";
+import Navbar from "../container/Navbar";
+import Hero from "../container/Hero";
+import AboutMe from "../container/AboutMe";
+import Portifolio from "../container/Portifolio";
+import ContactMe from "../container/ContactMe";
 
 const useActiveSection = (ids: string[]) => {
   const [active, setActive] = React.useState(ids[0]);

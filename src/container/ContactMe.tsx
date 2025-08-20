@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Mail, Send } from "lucide-react";
 import { BsLinkedin } from "react-icons/bs";
 import axios from "axios";
-import Popup from "./Popup";
-import Loading from "./Loading";
+import Popup from "../components/Popup";
+import Loading from "../components/Loading";
+import Button from "../components/Button";
 
 const ContactMe: React.FC = () => {
     const [ isOpenLoading, setIsOpenLoading ] = useState(false);
@@ -104,9 +105,9 @@ const ContactMe: React.FC = () => {
                             <BsLinkedin className="h-4 w-4"/>LinkedIn
                         </a>
                     </div>
-                    <button className="cursor-pointer flex flex-wrap items-center gap-2 rounded-xl px-6 py-3 font-medium bg-blue-custom transition-all duration-200 hover:bg-blue-custom/80 group">
-                        <Send className="h-4 w-4"/> Send Message
-                    </button>
+                    <Button>
+                        <><Send className="h-4 w-4"/> Send Message</>
+                    </Button>
                 </div>
             </form>
         </section>

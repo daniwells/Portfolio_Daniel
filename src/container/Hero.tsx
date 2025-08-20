@@ -1,6 +1,7 @@
 import { Download } from "lucide-react";
 import photoImage from "../../public/assets/images/photo.png"
 import curriculumPdf from "../../public/assets/pdf/Curriculo_Daniel.pdf"
+import Button from "../components/Button";
 
 const Hero = () => {
 
@@ -13,19 +14,19 @@ const Hero = () => {
                 <h2 className="mt-3 text-2xl font-medium">
                     Fullstack Developer
                 </h2>
-                <p className="mt-6 max-w-xl leading-relaxed text-white/70">
+                <p className="mt-6 mb-6 max-w-xl leading-relaxed text-white/70">
                     I love learning new technologies and building solutions that make a difference. Thanks for visiting my portfolio! Happy coding..!
                 </p>
-                <button className="mt-8 flex flex-wrap items-center gap-3 group">
+                <Button>
                     <a
                         type="application/pdf"
                         target="_blank"
                         href={curriculumPdf}
-                        className="inline-flex items-center gap-2 rounded-xl px-6 py-3 font-medium bg-blue-custom transition-all duration-200 group-hover:bg-blue-custom/80"
+                        className="flex items-center gap-2"
                     >
                         <Download className="h-4 w-4" /> Download CV
                     </a>
-                </button>
+                </Button>
             </div>
 
             <div className="relative flex-1">
