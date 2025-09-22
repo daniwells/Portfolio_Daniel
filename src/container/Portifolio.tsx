@@ -1,5 +1,6 @@
 // Libs
 import { FolderGit2 } from "lucide-react";
+import { useState } from "react";
 
 // Icons
 import { 
@@ -86,8 +87,17 @@ const projects = [
   },
 ];
 
-const Portifolio: React.FC = () => (
-  <section id="projects" className="mx-auto max-w-6xl px-4 py-24 md:py-32">
+const Portifolio: React.FC = () => {
+  const [activeItem, setActiveItem] = useState<Record<string, boolean>>({
+    "Daniel's Store": false,
+    "CoreSync": false,
+    "Tasks": false,
+    "Prostore": false,
+    "Arquiteto do Brownie": false,
+    "Ritmo da Forma": false,
+  });
+
+  return <section id="projects" className="mx-auto max-w-6xl px-4 py-24 md:py-32">
     <h2 className="text-5xl font-extrabold text-pink-custom font-itim" >Projects</h2>
     <div className="mt-6 mb-6 flex items-center gap-2 text-sm text-white/60">
       <FolderGit2 className="h-4 w-4"/> Some of my recent work
@@ -95,26 +105,31 @@ const Portifolio: React.FC = () => (
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {projects.map((project) => (
         <div
+          onClick={() =>
+            setActiveItem((prev) => ({
+              ...prev,
+              [project.title]: !prev[project.title],
+          }))}
           key={project.title}
           className={`p-4 group flex flex-col overflow-hidden rounded-2xl ${project.bgColor} shadow-[0_0_25px_rgba(255,255,255,0.05)]`}
         >
           <div className="relative h-40 w-full overflow-hidden">
-            <div className="flex flex-col gap-2 items-center absolute top-1/2 left-1/2 transition duration-500 transform -translate-1/2 z-10 opacity-0 group-hover:opacity-100" >
+            <div className={`flex flex-col gap-2 items-center absolute top-1/2 left-1/2 transition duration-500 transform -translate-1/2 z-10 opacity-0 group-hover:opacity-100 ${activeItem[project.title] ? 'opacity-100' : ''}`}>
                 {
                   project.liveLink &&
-                  <a href={project.liveLink} target="_blank" className="gap-2 flex items-center cursor-pointer hover:text-blue-custom">
+                  <a href={project.liveLink} target="_blank" className="gap-2 flex items-center cursor-pointer hover:text-blue-custom focus:text-blue-custom">
                     <BsBoxArrowUpRight size={20}/> Live project
                   </a>
                 }
                 
-                <a href={project.githubLink} target="_blank" className="gap-2 flex items-center cursor-pointer hover:text-blue-custom">
+                <a href={project.githubLink} target="_blank" className="gap-2 flex items-center cursor-pointer hover:text-blue-custom focus:text-blue-custom">
                     <BsGithub size={20}/> Github
                 </a>
             </div>
             <img
               src={project.img}
               alt={project.title}
-              className="h-full w-full object-cover transition duration-500 rounded-xl filter group-hover:scale-105 group-hover:brightness-30"
+              className={`h-full w-full object-cover transition duration-500 rounded-xl filter group-hover:scale-105 group-hover:brightness-30 ${activeItem[project.title] ? 'brightness-30 scale-105' : ''}`}
             />
           </div>
 
@@ -132,6 +147,6 @@ const Portifolio: React.FC = () => (
       ))}
     </div>
   </section>
-);
+};
 
 export default Portifolio;
