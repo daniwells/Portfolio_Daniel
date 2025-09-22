@@ -54,7 +54,7 @@ const PortfolioPage: React.FC = () => {
         <ContactMe />
         
         <footer className="mx-auto max-w-6xl px-4 py-12 text-center text-xs text-white/50">
-          © {new Date().getFullYear()} Daniel Lima Portifolio
+          © {new Date().getFullYear()} Daniel Lima Portfolio
         </footer>
 
         <style>{`

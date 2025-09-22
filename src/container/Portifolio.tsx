@@ -1,6 +1,5 @@
 // Libs
 import { FolderGit2 } from "lucide-react";
-import prostoreImage from "../../public/assets/images/prostore.png";
 
 // Icons
 import { 
@@ -11,18 +10,29 @@ import {
   SiJsonwebtokens,
   SiCloudinary,
   SiPaypal,
-  SiStripe
+  SiStripe,
+  SiExpress,
+  SiExpo,
+  SiHere,
+  SiResend,
+  SiAngular,
+  SiDjango
 } from 'react-icons/si';
-import { BsBoxArrowUpRight, BsGithub } from "react-icons/bs";
+import { BsBoxArrowUpRight, BsGithub, BsAndroid } from "react-icons/bs";
+
 
 // Images
 import ritmoDaFormaImage from "../../public/assets/images/ritmo-da-forma.png";
 import arquitetoBrownieImage from "../../public/assets/images/arquiteto-brownie.png";
+import prostoreImage from "../../public/assets/images/prostore.png";
+import tasksImage from "../../public/assets/images/tasks.png";
+import coreSyncImage from "../../public/assets/images/coresync.png";
+import danielsStoreImage from "../../public/assets/images/daniels-store.png";
 
 const projects = [
   {
     title: "Ritmo da Forma",
-    description: "An interactive and educational web game that simulates real-life financial situations",
+    description: "An innovative presentation website for the 'Ritmo da Forma' gym.",
     builtWith: [<SiReact key={1} size={20} />, <SiDocker key={11} size={20}/>],
     img: ritmoDaFormaImage,
     liveLink: "https://ritmodaforma.vercel.app/",
@@ -31,8 +41,8 @@ const projects = [
   },
   {
     title: "Arquiteto do Brownie",
-    description: "A powerful and intuitive API for managing notes efficiently",
-    builtWith: [<SiNextdotjs key={2} size={20} />, <SiPostgresql key={22} size={20} />, <SiCloudinary key={222} size={20}/>],
+    description: "An efficient e-commerce for the 'Arquiteto do Brownie' business.",
+    builtWith: [<SiNextdotjs key={2} size={20} />, <SiPostgresql key={22} size={20} />, <SiCloudinary key={222} size={20}/>, <SiHere key={2222} size={20}/>, <SiResend key={22222} size={20}/>],
     img: arquitetoBrownieImage,
     liveLink: "https://arquitetodobrownie.vercel.app/",
     githubLink: "https://github.com/daniwells/Prostore_Course.git",
@@ -40,12 +50,39 @@ const projects = [
   },
   {
     title: "Prostore",
-    description: "Modern personal portfolio with animations",
+    description: "A modern e-commerce for a clothing store.",
     builtWith: [<SiNextdotjs key={3} size={20} />, <SiPostgresql key={33} size={20} />, <SiJsonwebtokens key={333} size={20} />, <SiPaypal key={3333} size={20}/>, <SiStripe key={33333} size={20}/>],
     img: prostoreImage,
     liveLink: "https://prostore-course-three.vercel.app/",
     githubLink: "https://github.com/daniwells/Prostore_Course.git",
     bgColor: "bg-prostore/40"
+  },
+  {
+    title: "Tasks",
+    description: "A powerful and intuitive mobile app for managing notes efficiently.",
+    builtWith: [<SiExpo key={4} size={20} />, <SiDocker key={44} size={20} />, <SiReact key={444} size={20}/>, <BsAndroid key={4444} size={20}/>, <SiExpress key={44444} size={20}/>],
+    img: tasksImage,
+    liveLink: null,
+    githubLink: "https://github.com/daniwells/Tasks.git",
+    bgColor: "bg-tasks/40"
+  },
+  {
+    title: "CoreSync",
+    description: "A clean tool for managing and centralizing meetings.",
+    builtWith: [<SiDjango key={4} size={20} />, <SiReact key={444} size={20}/>],
+    img: coreSyncImage,
+    liveLink: null,
+    githubLink: "https://github.com/analiceleite/coresync",
+    bgColor: "bg-coresync/40"
+  },
+  {
+    title: "Daniel's Store",
+    description: "A modern e-commerce using Dummy Json API.",
+    builtWith: [<SiAngular key={6} size={20} />],
+    img: danielsStoreImage,
+    liveLink: null,
+    githubLink: "https://github.com/daniwells/Daniels_Store",
+    bgColor: "bg-daniels-store/40"
   },
 ];
 
@@ -63,9 +100,13 @@ const Portifolio: React.FC = () => (
         >
           <div className="relative h-40 w-full overflow-hidden">
             <div className="flex flex-col gap-2 items-center absolute top-1/2 left-1/2 transition duration-500 transform -translate-1/2 z-10 opacity-0 group-hover:opacity-100" >
-                <a href={project.liveLink} target="_blank" className="gap-2 flex items-center cursor-pointer hover:text-blue-custom">
+                {
+                  project.liveLink &&
+                  <a href={project.liveLink} target="_blank" className="gap-2 flex items-center cursor-pointer hover:text-blue-custom">
                     <BsBoxArrowUpRight size={20}/> Live project
-                </a>
+                  </a>
+                }
+                
                 <a href={project.githubLink} target="_blank" className="gap-2 flex items-center cursor-pointer hover:text-blue-custom">
                     <BsGithub size={20}/> Github
                 </a>

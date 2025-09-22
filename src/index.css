@@ -12,6 +12,9 @@
     --color-ritmo-forma: #403E3B;
     --color-prostore: #FFC929;
     --color-arquiteto-brownie: #F2F2F2;
+    --color-tasks: #6e0b0d;
+    --color-daniels-store: #110724;
+    --color-coresync: #01164D;
 }
 
 @layer utilities {

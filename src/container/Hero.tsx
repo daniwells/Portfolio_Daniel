@@ -31,7 +31,7 @@ const Hero = () => {
             </div>
 
             <div className="relative flex-1 mb-5 md:mb-0">
-                <div className="relative mx-auto h-64 w-56 sm:h-80 sm:w-72 rounded-3xl group">
+                <div className="relative mx-auto h-64 w-56 sm:h-80 rounded-3xl group mr-12 sm:w-72 sm:mr-auto ">
                     <img 
                         src={photoImage} 
                         alt="Profile" 
